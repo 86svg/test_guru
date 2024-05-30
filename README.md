@@ -1,24 +1,13 @@
 # README
+Список возможных сущностей по проекту:
+-- Пользователь (User);
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-- Тест (Test);
 
-Things you may want to cover:
+-- Категория (Category);
 
-* Ruby version
+-- Вопрос (Question);
 
-* System dependencies
+-- Ответ (Answer);
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-- Результат теста (TestResult).
