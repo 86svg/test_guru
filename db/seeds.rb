@@ -28,74 +28,72 @@ max, kate, viky =
 # Категории
 history, geography =
   Category.create!([
-                     { title: 'history' },
-                     { title: 'geography' }
+                     { title: 'История' },
+                     { title: 'География' }
                    ])
 
 # Тесты
 test_history_level1, test_history_level3, test_geography_level2, test_geography_level1 =
   Test.create!([
-                 { title: 'history', level: 1, category: history, author: max },
-                 { title: 'history', level: 3, category: history, author: max },
-                 { title: 'geography', level: 2, category: geography, author: kate },
-                 { title: 'geography', level: 1, category: geography, author: viky }
+                 { title: 'history', level: 1, category_id: history.id, author_id: max.id },
+                 { title: 'history', level: 3, category_id: history.id, author_id: max.id },
+                 { title: 'geography', level: 2, category_id: geography.id, author_id: kate.id },
+                 { title: 'geography', level: 1, category_id: geography.id, author_id: viky.id }
                ])
 
 # Вопросы и ответы можно добавить аналогично, если они необходимы
 # Пример добавления вопросов:
-history_question1, history_question2 =
-  test_history_level1.questions.create!([
-                                          { body: 'Когда началась Вторая мировая война?' },
-                                          { body: 'Кто был первым президентом США?' }
+                      Question.create!([
+                                          { body: 'Когда началась Вторая мировая война?', test_id: history.id },
+                                          { body: 'Кто был первым президентом США?', test_id: history.id }
                                         ])
 
-geography_question1, geography_question2 =
-  test_geography_level2.questions.create!([
-                                            { body: 'Какая самая длинная река в мире?' },
-                                            { body: 'В какой стране находится гора Эверест?' }
+                        Question.create!([
+                                            { body: 'Какая самая длинная река в мире?', test_id: geography.id },
+                                            { body: 'В какой стране находится гора Эверест?', test_id: geography.id }
                                           ])
 
 # Пример добавления ответов:
-history_question1.answers.create!([
-                                    { body: '1939', correct: true },
-                                    { body: '1941', correct: false },
-                                    { body: '1914', correct: false },
-                                    { body: '1936', correct: false }
+                  Answer.create!([
+                                    { body: '1939', correct: true, question_id: history.id },
+                                    { body: '1941', correct: false, question_id: history.id },
+                                    { body: '1914', correct: false, question_id: history.id },
+                                    { body: '1936', correct: false, question_id: history.id }
                                   ])
 
-history_question2.answers.create!([
-                                    { body: 'Джордж Вашингтон', correct: true },
-                                    { body: 'Авраам Линкольн', correct: false },
-                                    { body: 'Томас Джефферсон', correct: false },
-                                    { body: 'Джон Адамс', correct: false }
+                  Answer.create!([
+                                    { body: 'Джордж Вашингтон', correct: true, question_id: history.id },
+                                    { body: 'Авраам Линкольн', correct: false, question_id: history.id },
+                                    { body: 'Томас Джефферсон', correct: false, question_id: history.id },
+                                    { body: 'Джон Адамс', correct: false, question_id: history.id }
                                   ])
 
-geography_question1.answers.create!([
-                                      { body: 'Амазонка', correct: true },
-                                      { body: 'Нил', correct: false },
-                                      { body: 'Янцзы', correct: false },
-                                      { body: 'Миссисипи', correct: false }
+                    Answer.create!([
+                                      { body: 'Амазонка', correct: true, question_id: geography.id },
+                                      { body: 'Нил', correct: false, question_id: geography.id },
+                                      { body: 'Янцзы', correct: false, question_id: geography.id },
+                                      { body: 'Миссисипи', correct: false, question_id: geography.id }
                                     ])
 
-geography_question2.answers.create!([
-                                      { body: 'Непал', correct: true },
-                                      { body: 'Индия', correct: false },
-                                      { body: 'Китай', correct: false },
-                                      { body: 'Пакистан', correct: false }
+                    Answer.create!([
+                                      { body: 'Непал', correct: true, question_id: geography.id },
+                                      { body: 'Индия', correct: false, question_id: geography.id },
+                                      { body: 'Китай', correct: false, question_id: geography.id },
+                                      { body: 'Пакистан', correct: false, question_id: geography.id }
                                     ])
 
 # Добавляем прохождения тестов пользователями
-max.test_passings.create!([
-                            { status: 'пройден', test: test_history_level1 },
-                            { status: 'в процессе', test: test_geography_level2 }
+      TestPassing.create!([
+                            { status: 'пройден', test_id: test_history_level1.id, user_id: max.id },
+                            { status: 'в процессе', test_id: test_geography_level2.id, user_id: max.id }
                           ])
 
-kate.test_passings.create!([
-                             { status: 'в процессе', test: test_geography_level2 },
-                             { status: 'в процессе', test: test_history_level3 }
+       TestPassing.create!([
+                             { status: 'в процессе', test_id: test_geography_level2.id, user_id: kate.id },
+                             { status: 'в процессе', test_id: test_history_level3.id, user_id: kate.id }
                            ])
 
-viky.test_passings.create!([
-                             { status: 'в процессе', test: test_history_level1 },
-                             { status: 'пройден', test: test_geography_level1 }
+       TestPassing.create!([
+                             { status: 'в процессе', test_id: test_history_level1.id, user_id: viky.id },
+                             { status: 'пройден', test_id: test_geography_level1.id, user_id: viky.id }
                            ])

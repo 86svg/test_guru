@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2024_06_14_182527) do
   end
 
   create_table "test_passings", force: :cascade do |t|
+    t.string "status"
     t.integer "user_id", null: false
     t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
