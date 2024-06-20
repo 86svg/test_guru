@@ -28,17 +28,17 @@ max, kate, viky =
 # Категории
 history, geography =
   Category.create!([
-                     { title: 'История' },
-                     { title: 'География' }
+                     { title: 'history' },
+                     { title: 'geography' }
                    ])
 
 # Тесты
 test_history_level1, test_history_level3, test_geography_level2, test_geography_level1 =
   Test.create!([
-                 { title: 'история', level: 1, category_id: history.id, author_id: max.id },
-                 { title: 'история', level: 3, category_id: history.id, author_id: max.id },
-                 { title: 'география', level: 2, category_id: geography.id, author_id: kate.id },
-                 { title: 'география', level: 1, category_id: geography.id, author_id: viky.id }
+                 { title: 'даты', level: 1, category_id: history.id, author_id: max.id },
+                 { title: 'президенты', level: 3, category_id: history.id, author_id: max.id },
+                 { title: 'реки', level: 2, category_id: geography.id, author_id: kate.id },
+                 { title: 'горы', level: 1, category_id: geography.id, author_id: viky.id }
                ])
 
 # Вопросы и ответы можно добавить аналогично, если они необходимы
