@@ -4,7 +4,7 @@ class Test < ApplicationRecord
 
   has_many :questions
   has_many :test_passings
-  has_many :users
+  has_many :users, through: :test_passings
   def self.sorted_tests_by_category(category)
     joins('JOIN categories ON categories.id = tests.category_id')
       .where(categories: { title: category })
