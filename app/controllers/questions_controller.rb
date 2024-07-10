@@ -8,14 +8,10 @@ class QuestionsController < ApplicationController
 		@questions = @test.questions
 	end
 
-	#def show
-	#	render inline: '<h1> <%= question.body %> </h1>'
-	#end
-  def show
-   @test = Test.find(params[:test_id])
-   @question = @test.questions.find(params[:id])
-  end
-	
+	def show
+		render inline: '<h1> <%= @question.body %> </h1>'
+	end
+
 	def new
 
 	end
