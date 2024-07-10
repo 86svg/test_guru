@@ -1,27 +1,25 @@
 class QuestionsController < ApplicationController
-	before_action :find_test, only: [:index, :create, :new]
+  before_action :find_test, only: [:index, :create, :new]
 	before_action :find_question, only: [:show, :destroy]
 
-	rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
 
 	def index
 		@questions = @test.questions
 	end
 
 	def show
-		render inline: '<h1> <%= @question.body %> </h1>'
+    render inline: '<h1> <%= @question.body %> </h1>'
 	end
 
-	def new
+  def new; end
 
-	end
-
-	def create 
+	def create
 		@question = @test.questions.build(question_params)
 		if @question.save
 			redirect_to @question
-		else 
-			render :new
+		else
+		  render :new
 		end
 	end
 
