@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
@@ -13,10 +15,10 @@ class Test < ApplicationRecord
                                      joins(:category)
                                        .where(categories: { title: category_name })
                                        .order(title: :desc)
-                                          }
+                                   }
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :title, uniqueness: {scope: :level}
+  validates :title, uniqueness: { scope: :level }
 
   def self.sorted_category(category_name)
     sorted_tests_by_category(category_name).pluck(:title)

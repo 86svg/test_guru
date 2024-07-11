@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 # frozen_string_literal: true
 
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -36,7 +35,7 @@ history, geography =
 test_history, test_geography =
   Test.create!([
                  { title: 'даты', level: 1, author: max, category: history },
-                 { title: 'президенты', level: 3, author: max, category: history  },
+                 { title: 'президенты', level: 3, author: max, category: history },
                  { title: 'реки', level: 2, author: kate, category: geography },
                  { title: 'горы', level: 1, author: viky, category: geography }
                ])
@@ -44,15 +43,15 @@ test_history, test_geography =
 # Вопросы и ответы можно добавить аналогично, если они необходимы
 # Пример добавления вопросов:
 history_question1, history_question2 =
-         test_history.questions.create!([
-                                          { body: 'Когда началась Вторая мировая война?' },
-                                          { body: 'Кто был первым президентом США?' }
-                                        ])
+  test_history.questions.create!([
+                                   { body: 'Когда началась Вторая мировая война?' },
+                                   { body: 'Кто был первым президентом США?' }
+                                 ])
 geography_question1, geography_question2 =
-        test_geography.questions.create!([
-                                            { body: 'Какая самая длинная река в мире?' },
-                                            { body: 'В какой стране находится гора Эверест?' }
-                                          ])
+  test_geography.questions.create!([
+                                     { body: 'Какая самая длинная река в мире?' },
+                                     { body: 'В какой стране находится гора Эверест?' }
+                                   ])
 
 # Пример добавления ответов:
 history_question1.answers.create!([
@@ -76,7 +75,7 @@ geography_question1.answers.create!([
                                       { body: 'Миссисипи', correct: false }
                                     ])
 
-                                    geography_question2.answers.create!([
+geography_question2.answers.create!([
                                       { body: 'Непал', correct: true },
                                       { body: 'Индия', correct: false },
                                       { body: 'Китай', correct: false },
@@ -84,17 +83,17 @@ geography_question1.answers.create!([
                                     ])
 
 # Добавляем прохождения тестов пользователями
-      max.test_passings.create!([
+max.test_passings.create!([
                             { status: 'пройден', test: test_history },
                             { status: 'в процессе', test: test_geography }
                           ])
 
-       kate.test_passings.create!([
+kate.test_passings.create!([
                              { status: 'в процессе', test: test_geography },
                              { status: 'в процессе', test: test_history }
                            ])
 
-       viky.test_passings.create!([
+viky.test_passings.create!([
                              { status: 'в процессе', test: test_history },
                              { status: 'пройден', test: test_geography }
                            ])
