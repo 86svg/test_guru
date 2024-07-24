@@ -40,8 +40,11 @@ ActiveRecord::Schema.define(version: 20_240_703_170_622) do
     t.string 'status'
     t.integer 'user_id', null: false
     t.integer 'test_id', null: false
+    t.integer 'current_question_id'
+    t.integer 'correct_questions', default: 0
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.index ['current_question_id'], name: 'index_test_passings_on_current_question_id'
     t.index ['test_id'], name: 'index_test_passings_on_test_id'
     t.index ['user_id'], name: 'index_test_passings_on_user_id'
   end
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20_240_703_170_622) do
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['author_id'], name: 'index_tests_on_author_id'
     t.index ['category_id'], name: 'index_tests_on_category_id'
+    t.index %w[title level], name: 'index_tests_on_title_and_level', unique: true
   end
 
   create_table 'users', force: :cascade do |t|
@@ -66,6 +70,7 @@ ActiveRecord::Schema.define(version: 20_240_703_170_622) do
 
   add_foreign_key 'answers', 'questions'
   add_foreign_key 'questions', 'tests'
+  add_foreign_key 'test_passings', 'questions', column: 'current_question_id'
   add_foreign_key 'test_passings', 'tests'
   add_foreign_key 'test_passings', 'users'
   add_foreign_key 'tests', 'categories'
