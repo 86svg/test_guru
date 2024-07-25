@@ -6,15 +6,13 @@ class QuestionsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
 
-  def index
-    @questions = @test.questions
-  end
-
   def show
-    render inline: '<h1> <%= @question.body %> </h1>'
+
   end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
     @question = @test.questions.build(question_params)
