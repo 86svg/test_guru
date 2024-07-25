@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 class TestPassing < ApplicationRecord
+  SUCCESS_RATE = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_next_question
+  before_validation :before_validation_set_next_question
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -29,7 +31,7 @@ class TestPassing < ApplicationRecord
   end
 
   def successfull?
-    correct_percent >= 85
+    correct_percent >= SUCCESS_RATE
   end
 
   private
@@ -42,7 +44,7 @@ class TestPassing < ApplicationRecord
     current_question.answers.correct
   end
 
-  def before_validation_next_question
+  def before_validation_set_next_question
     self.current_question = if current_question.nil?
                               test.questions.first
                             else

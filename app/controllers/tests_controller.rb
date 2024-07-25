@@ -41,7 +41,6 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user = User.first
     @user.tests.push(@test)
     redirect_to @user.test_passing(@test)
   end
