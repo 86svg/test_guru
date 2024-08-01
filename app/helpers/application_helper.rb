@@ -12,4 +12,10 @@ module ApplicationHelper
   def current_year
     Time.current.year
   end
+
+  def flash_message_for_user
+    flash.map do |type, message|
+      content_tag(:p, message, class: "flash #{type}")
+    end.join.html_safe
+  end
 end
