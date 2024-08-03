@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     return if current_user
 
-    cookies[:redirect_url] = request.url
     cookies[:requested_page] = request.url
     redirect_to login_path, alert: 'Verify login and password please'
   end
