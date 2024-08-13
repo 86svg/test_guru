@@ -11,10 +11,10 @@
 
 <table>
   <tbody>
-    <%= render @questions %>
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </tbody>
 </table>
 
-<p> <%= link_to 'Создать новый вопрос', new_test_question_path(@test) %> </p>
-<%= link_to 'Изменить тест', edit_test_path(@test) %> |
-<%= link_to 'К тестам', tests_path %>
+<p> <%= link_to 'Создать новый вопрос', new_admin_test_question_path(@test) %> </p>
+<%= link_to 'Изменить тест', edit_admin_test_path(@test) %> |
+<%= link_to 'К тестам', admin_tests_path %>
