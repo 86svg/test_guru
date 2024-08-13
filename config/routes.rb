@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   root 'tests#index'
 
   devise_for :users, path: :gurus,

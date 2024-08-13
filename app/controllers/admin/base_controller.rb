@@ -1,13 +1,19 @@
-class Admin::BaseController < ApplicationController
+# frozen_string_literal: true
 
-  layout 'admin'
+module Admin
+  class BaseController < ApplicationController
+    layout 'admin'
 
-  before_action :authenticate_user!
-  before_action :admin_required!
+    before_action :authenticate_user!
+    before_action :admin_required!
 
-  private
+    private
 
-  def admin_required!
-    redirect_to root_path, alert: 'Вы не авторизированны, чтоб просматривать данную страницу.' unless current_user.is_a?(Admin)
+    def admin_required!
+      return if current_user.is_a?(Admin)
+
+      redirect_to root_path,
+                  alert: 'Вы не авторизированны, чтоб просматривать данную страницу.'
+    end
   end
 end

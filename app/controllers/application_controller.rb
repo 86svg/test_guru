@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    self.type == 'Admin'
+    type == 'Admin'
   end
 end
