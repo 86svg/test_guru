@@ -19,9 +19,9 @@
 # Пользователи
 max, kate, viky =
   User.create!([
-                 { name: 'Max', email: 'max@mail.ru' },
-                 { name: 'Kate', email: 'kate@mail.ru' },
-                 { name: 'Viky', email: 'viky@mail.ru' }
+                 { first_name: 'Max', last_name: 'Max', email: 'max@mail.ru', password: '111111', password_confirmation: '111111', type: 'Admin', confirmed_at: Time.now },
+                 { first_name: 'Kate', last_name: 'Kate', email: 'kate@mail.ru', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
+                 { first_name: 'Viky', last_name: 'Viky', email: 'viky@mail.ru', password: '111111', password_confirmation: '111111', confirmed_at: Time.now }
                ])
 
 # Категории

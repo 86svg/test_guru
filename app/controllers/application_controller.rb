@@ -10,8 +10,4 @@ class ApplicationController < ActionController::Base
       super(resource)
     end
   end
-
-  def admin?
-    type == 'Admin'
-  end
 end
