@@ -13,13 +13,18 @@
   <body>
      <div class="user-actions">
       <p><%= link_to 'TestGuru', root_path %></p>
-      <% if logged_in? %>
-        <p class="nav user">Добро пожаловать, <b><%= current_user.email %></b> в TestGuru</p>
-        <p><%= button_to 'Выход', logout_path, method: :delete %></p>
+      <% if user_signed_in? %>
+        <p class="nav user">
+          Welcome, <b><%= current_user.email %></b> Guru
+          <%= button_to 'Выход', destroy_user_session_path, method: :delete %>
+        </p>
       <% else %>
-        <p><%= link_to 'Регистрация', signup_path %> | <%= link_to 'Вход', login_path %></p>
+        <p><%= link_to 'Регистрация', new_user_registration_path %> | <%= link_to 'Вход', new_user_session_path %></p>
       <% end %>
     </div>
+
+    <%= render 'shared/flash' %>
+
     <%= yield %>
   </body>
 
