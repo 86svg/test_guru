@@ -4,8 +4,8 @@
   <td><%= test_level(test) %></td>
   <td><%= test.category.title %></td>
   <td><%= test.questions.count %></td>
-  <td><%= link_to 'Открыть', admin_test_path(test) %></td>
-  <td><%= link_to 'Изменить', edit_admin_test_path(test) %>
-  <td> <%= button_to 'Удалить', admin_test_path(test), method: :delete,
+  <td><%= link_to t('.open'), admin_test_path(test) %></td>
+  <td><%= link_to t('.edit'), edit_admin_test_path(test) %>
+  <td> <%= button_to t('.delete'), admin_test_path(test), method: :delete,
                 data: { confirm: 'Вы уверены?'} %> </td>
 </tr>

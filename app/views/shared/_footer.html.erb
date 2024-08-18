@@ -1,6 +1,6 @@
 
 <footer>
-  <p>&copy; <%= current_year %> <%= 'Sergey Gavrish' %> | <%= github_url("86svg", "test_guru")%> </p>
-  <p><%= 'Приложение для прохождения и создания тестов' %></p>
-  <p> <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'https://thinknetica.com/', target: "_blank",  rel: 'nofollow', rel: 'noopener'%> </p>
+  <p>&copy; <%= current_year %> <%= t('.author') %> | <%= github_url("86svg", "test_guru")%> </p>
+  <p><%= t('.application_purpose') %></p>
+  <p> <%= link_to  t('.project_school'), 'https://thinknetica.com/', target: "_blank",  rel: 'nofollow', rel: 'noopener'%> </p>
 </footer>
