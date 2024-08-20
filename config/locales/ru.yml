@@ -44,6 +44,32 @@ ru:
   admin:
     nav:
       admin_panel: "Панель Администраторов TestGuru"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm_delete: "Вы уверены?"
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        back: "Назад"
+    questions:
+      question:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm_delete: "Вы уверены?"
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        create: "Создать ответ"
+        edit: "Изменить"
+        back: "Назад"
     tests:
       create:
         success: "Тест был успешно создан."

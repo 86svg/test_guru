@@ -15,7 +15,7 @@
       <p><%= link_to 'TestGuru', root_path %></p>
       <% if user_signed_in? %>
         <p class="nav user">
-          Welcome, <b><%= current_user.email %></b> Guru
+          <%= t('.welcome')%>, <b><%= current_user.email %></b> Guru
           <%= button_to t('.logout'), destroy_user_session_path, method: :delete %>
         </p>
       <% else %>

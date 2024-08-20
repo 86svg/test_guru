@@ -43,6 +43,32 @@ en:
   admin:
     nav:
       admin_panel: "TestGuru Admin Panel"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        back: "Back"
+    questions:
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
+      edit:
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        create: "Create answer"
+        edit: "Edit"
+        back: "Back"
     tests:
       create:
         success: "Test was succesfully created."

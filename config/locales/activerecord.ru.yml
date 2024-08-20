@@ -11,3 +11,8 @@ ru:
       messages:
         blank: "не может быть пустым"
         required: "должен существовать"
+  devise:
+    registrations:
+      new:
+        header: "Регистрация"
+        signup: "Зарегистрироваться"
