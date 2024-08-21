@@ -51,13 +51,19 @@ ru:
         delete: "Удалить"
         confirm_delete: "Вы уверены?"
       edit:
+        header: "Изменение ответа"
         back: "Назад"
       new:
+        header: "Новый ответ"
         back: "Назад"
       show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильно"
         back: "Назад"
     questions:
       question:
+        title: "Ответы"
         show: "Показать"
         edit: "Изменить"
         delete: "Удалить"
@@ -71,6 +77,10 @@ ru:
         edit: "Изменить"
         back: "Назад"
     tests:
+      test:
+        open: "Открыть"
+        edit: "Изменить"
+        delete: "Удалить"
       create:
         success: "Тест был успешно создан."
       index:

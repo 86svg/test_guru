@@ -50,26 +50,39 @@ en:
         delete: "Delete"
         confirm_delete: "Are you sure?"
       edit:
+        header: "Editing answer"
         back: "Back"
       new:
+        header: "New answer"
         back: "Back"
       show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
         back: "Back"
     questions:
       question:
+        title: "Answers"
         show: "Show"
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "Are you sure?"
       edit:
+        header: "Edit %{test_title} test"
         back: "Back"
       new:
         back: "Back"
       show:
-        create: "Create answer"
-        edit: "Edit"
-        back: "Back"
+        title: "Answers"
+        level: "Level"
+        create_new_question: "Create new qustion"
+        edit_test: "Edit test"
+        to_tests: "to tests"
     tests:
+      test:
+        open: "Open"
+        edit: "Edit"
+        delete: "Delete"
       create:
         success: "Test was succesfully created."
       index:

@@ -1,6 +1,6 @@
 <p> <%= @question.body %> </p>
 
-<h2>Answers</h2>
+<h2> <%= t('.title')%> </h2>
 
 <%= link_to t('.create'), new_admin_question_answer_path(@question) %>
 
