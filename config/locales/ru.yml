@@ -2,6 +2,9 @@ ru:
   hello: "Привет, мир"
 
   helpers:
+    question_header:
+      edit: "Редактирование вопроса %{test_title}"
+      new: "Создание нового вопроса для %{test_title}"
     submit:
       test:
         create: "Создать Тест"
@@ -51,7 +54,7 @@ ru:
         delete: "Удалить"
         confirm_delete: "Вы уверены?"
       edit:
-        header: "Изменение ответа"
+        header: "Редактирование %{test_title}"
         back: "Назад"
       new:
         header: "Новый ответ"

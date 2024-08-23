@@ -24,10 +24,16 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = if I18n.locale_available?(params[:locale])
-                    params[:locale]
-                  else
-                    I18n.default_locale
-                  end
+    if params[:locale].present?
+      if I18n.locale_available?(params[:locale])
+        I18n.locale = params[:locale]
+      else
+        Rails.logger.warn("Неверная локаль: #{params[:locale]}")
+        I18n.locale = I18n.default_locale
+      end
+    else
+      Rails.logger.info("Локаль не задана, используется локаль по умолчанию: #{I18n.default_locale}")
+      I18n.locale = I18n.default_locale
+    end
   end
 end

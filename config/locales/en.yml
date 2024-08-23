@@ -2,6 +2,9 @@ en:
   hello: "Hello world"
 
   helpers:
+    question_header:
+      edit: "Edit Question %{test_title}"
+      new: "Create New Question %{test_title}"
     submit:
       test:
         create: "Create Test"

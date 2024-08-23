@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy]
+  before_action :set_locale
   def index
     @tests = Test.all
   end
