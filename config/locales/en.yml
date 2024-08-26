@@ -1,33 +1,125 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    question_header:
+      edit: "Edit Question %{test_title}"
+      new: "Create New Question %{test_title}"
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Please select"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    footer:
+      author: "Sergey Gavrish"
+      application_purpose: "Application for taking and creating tests"
+      project_school: "Educational project at the Thinknetica online school"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      questions_count: "Questions Count"
+      actions: "Actions"
+    test:
+      start: 'Start'
+
+
+  test_passings:
+    result:
+      header: "The %{title} Test was Completed!"
+
+  admin:
+    nav:
+      admin_panel: "TestGuru Admin Panel"
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
+      edit:
+        header: "Editing answer"
+        back: "Back"
+      new:
+        header: "New answer"
+        back: "Back"
+      show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+        back: "Back"
+    questions:
+      question:
+        title: "Answers"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
+      edit:
+        header: "Edit %{test_title} test"
+        back: "Back"
+      new:
+        back: "Back"
+      show:
+        title: "Answers"
+        level: "Level"
+        create_new_question: "Create new qustion"
+        edit_test: "Edit test"
+        to_tests: "to tests"
+    tests:
+      test:
+        open: "Open"
+        edit: "Edit"
+        delete: "Delete"
+      create:
+        success: "Test was succesfully created."
+      index:
+        header: "Tricky Tests"
+        create_new_test: "Create new test"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        questions_count: "Questions Count"
+        actions: "Actions"
+      new:
+        create_new_test: "Create new test"
+        back: "Back"
+      edit:
+        header: "Edit %{test_title} test"
+        back: "Back"
+      show:
+        title: "Title"
+        level: "Level"
+        create_new_question: "Create new question"
+        edit_test: "Edit test"
+        to_tests: "Back to tests"
+      test:
+        open: 'Open'
+        edit: 'Edit'
+        delete: "Delete"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  layouts:
+    application:
+      welcome: "Welcome"
+      logout: "Logout"
+      registration: "Registration"
+      login: "Login"

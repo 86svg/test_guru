@@ -2,6 +2,7 @@
 class Admin::QuestionsController < Admin::BaseController
   before_action :find_test, only: %i[create new]
   before_action :find_question, only: %i[show destroy edit update]
+  before_action :set_locale
 
   rescue_from ActiveRecord::RecordNotFound, with: :question_not_found
 

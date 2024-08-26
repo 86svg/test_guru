@@ -1,50 +1,123 @@
-
 ru:
-  devise:
-    confirmations:
-      confirmed: 'Ваш аккаунт успешно подтвержден.'
-      send_instructions: 'В течение нескольких минут вы получите письмо с инструкциями по подтверждению аккаунта.'
-      send_paranoid_instructions: 'Если ваш email зарегистрирован в нашей системе, в течение нескольких минут вы получите письмо с инструкциями по подтверждению аккаунта.'
-    failure:
-      already_authenticated: 'Вы уже вошли в систему.'
-      unauthenticated: 'Вам нужно войти в систему или зарегистрироваться, чтобы продолжить.'
-      user:
-        unauthenticated: 'Вы не авторизованы для доступа к этой странице. Пожалуйста, войдите в систему.'
-    passwords:
-      no_token: 'Не удалось изменить пароль, так как токен восстановления пароля отсутствует.'
-      send_instructions: 'В течение нескольких минут вы получите письмо с инструкциями по восстановлению пароля.'
-      updated: 'Ваш пароль был успешно изменен.'
-      updated_not_active: 'Ваш пароль был изменен, но ваш аккаунт еще не активирован.'
-    registrations:
-      signed_up: 'Добро пожаловать! Вы успешно зарегистрировались.'
-      signed_up_but_inactive: 'Вы успешно зарегистрировались. Однако ваш аккаунт еще не активирован.'
-      signed_up_but_locked: 'Вы успешно зарегистрировались. Однако ваш аккаунт заблокирован.'
-      signed_up_but_unconfirmed: 'Вы успешно зарегистрировались. Однако ваш аккаунт еще не подтвержден.'
-      update_needs_confirmation: 'Вы обновили свои учетные данные. Однако вам нужно подтвердить новый email.'
-      updated: 'Ваша учетная запись была успешно обновлена.'
-    sessions:
-      signed_in: 'Вы успешно вошли в систему.'
-      signed_out: 'Вы успешно вышли из системы.'
-      already_signed_out: 'Вы уже вышли из системы.'
-    unlocks:
-      send_instructions: 'В течение нескольких минут вы получите письмо с инструкциями по разблокировке аккаунта.'
-      unlocked: 'Ваш аккаунт был успешно разблокирован.'
-      send_paranoid_instructions: 'Если ваш email зарегистрирован в нашей системе, в течение нескольких минут вы получите письмо с инструкциями по разблокировке аккаунта.'
-  errors:
-    messages:
-      not_saved: "Не удалось сохранить объект."
-      taken: "уже существует."
-      blank: "не может быть пустым."
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              taken: "уже занят."
-            name:
-              blank: "не может быть пустым."
-      messages:
-        taken: "уже занят."
-        blank: "не может быть пустым."
   hello: "Привет, мир"
+
+  helpers:
+    question_header:
+      edit: "Редактирование вопроса %{test_title}"
+      new: "Создание нового вопроса для %{test_title}"
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберете нужное"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    footer:
+      author: "Сергей Гавриш"
+      application_purpose: "Приложение для прохождения и создания тестов"
+      project_school: "Учебный проект в онлайн-школе Thinknetica"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      questions_count: "Количество вопросов"
+      actions: "Действия"
+    test:
+      start: 'Старт'
+
+  test_passings:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  admin:
+    nav:
+      admin_panel: "Панель Администраторов TestGuru"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm_delete: "Вы уверены?"
+      edit:
+        header: "Редактирование %{test_title}"
+        back: "Назад"
+      new:
+        header: "Новый ответ"
+        back: "Назад"
+      show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильно"
+        back: "Назад"
+    questions:
+      question:
+        title: "Ответы"
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm_delete: "Вы уверены?"
+      edit:
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        create: "Создать ответ"
+        edit: "Изменить"
+        back: "Назад"
+    tests:
+      test:
+        open: "Открыть"
+        edit: "Изменить"
+        delete: "Удалить"
+      create:
+        success: "Тест был успешно создан."
+      index:
+        header: "Доступные тесты"
+        create_new_test: "Создать новый тест"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        questions_count: "Количество вопросов"
+        actions: "Действия"
+      new:
+        create_new_test: "Создать новый тест"
+        back: "Назад"
+      edit:
+        header: "Изменить %{test_title} тест"
+        back: "Назад"
+      show:
+        title: "Название"
+        level: "Уровень"
+        create_new_question: "Создать новый вопрос"
+        edit_test: "Изменить тест"
+        to_tests: "К тестам"
+      test:
+        open: 'Открыть'
+        edit: 'Изменить'
+        delete: "Удалить"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  layouts:
+    application:
+      welcome: "Добро пожаловать"
+      logout: "Выход"
+      registration: "Регистрация"
+      login: "Вход"

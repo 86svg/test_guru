@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy]
+  before_action :set_locale
   def index
     @tests = Test.all
   end
@@ -19,7 +20,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_test_path(@test)
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end

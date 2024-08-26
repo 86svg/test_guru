@@ -17,83 +17,74 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Пользователи
-max, kate, viky =
-  User.create!([
-                 { first_name: 'Max', last_name: 'Max', email: 'max@mail.ru', password: '111111', password_confirmation: '111111', type: 'Admin', confirmed_at: Time.now },
-                 { first_name: 'Kate', last_name: 'Kate', email: 'kate@mail.ru', password: '123456', password_confirmation: '123456', confirmed_at: Time.now },
-                 { first_name: 'Viky', last_name: 'Viky', email: 'viky@mail.ru', password: '111111', password_confirmation: '111111', confirmed_at: Time.now }
-               ])
+max = User.find_or_create_by!(email: 'max@mail.ru') do |user|
+  user.first_name = 'Max'
+  user.last_name = 'Max'
+  user.password = '111111'
+  user.password_confirmation = '111111'
+  user.type = 'Admin'
+  user.confirmed_at = Time.now
+end
+
+kate = User.find_or_create_by!(email: 'kate@mail.ru') do |user|
+  user.first_name = 'Kate'
+  user.last_name = 'Kate'
+  user.password = '123456'
+  user.password_confirmation = '123456'
+  user.confirmed_at = Time.now
+end
+
+viky = User.find_or_create_by!(email: 'viky@mail.ru') do |user|
+  user.first_name = 'Viky'
+  user.last_name = 'Viky'
+  user.password = '111111'
+  user.password_confirmation = '111111'
+  user.confirmed_at = Time.now
+end
 
 # Категории
-history, geography =
-  Category.create!([
-                     { title: 'history' },
-                     { title: 'geography' }
-                   ])
+history = Category.find_or_create_by!(title: 'history')
+geography = Category.find_or_create_by!(title: 'geography')
 
 # Тесты
-test_history, test_geography =
-  Test.create!([
-                 { title: 'даты', level: 1, author: max, category: history },
-                 { title: 'президенты', level: 3, author: max, category: history },
-                 { title: 'реки', level: 2, author: kate, category: geography },
-                 { title: 'горы', level: 1, author: viky, category: geography }
-               ])
+test_history_dates = Test.find_or_create_by!(title: 'даты', level: 1, author: max, category: history)
+test_history_presidents = Test.find_or_create_by!(title: 'президенты', level: 3, author: max, category: history)
+test_geography_rivers = Test.find_or_create_by!(title: 'реки', level: 2, author: kate, category: geography)
+test_geography_mountains = Test.find_or_create_by!(title: 'горы', level: 1, author: viky, category: geography)
 
-# Вопросы и ответы можно добавить аналогично, если они необходимы
-# Пример добавления вопросов:
-history_question1, history_question2 =
-  test_history.questions.create!([
-                                   { body: 'Когда началась Вторая мировая война?' },
-                                   { body: 'Кто был первым президентом США?' }
-                                 ])
-geography_question1, geography_question2 =
-  test_geography.questions.create!([
-                                     { body: 'Какая самая длинная река в мире?' },
-                                     { body: 'В какой стране находится гора Эверест?' }
-                                   ])
+# Вопросы и ответы
+history_question1 = test_history_dates.questions.find_or_create_by!(body: 'Когда началась Вторая мировая война?')
+history_question2 = test_history_presidents.questions.find_or_create_by!(body: 'Кто был первым президентом США?')
 
-# Пример добавления ответов:
-history_question1.answers.create!([
-                                    { body: '1939', correct: true },
-                                    { body: '1941', correct: false },
-                                    { body: '1914', correct: false },
-                                    { body: '1936', correct: false }
-                                  ])
+geography_question1 = test_geography_rivers.questions.find_or_create_by!(body: 'Какая самая длинная река в мире?')
+geography_question2 = test_geography_mountains.questions.find_or_create_by!(body: 'В какой стране находится гора Эверест?')
 
-history_question2.answers.create!([
-                                    { body: 'Джордж Вашингтон', correct: true },
-                                    { body: 'Авраам Линкольн', correct: false },
-                                    { body: 'Томас Джефферсон', correct: false },
-                                    { body: 'Джон Адамс', correct: false }
-                                  ])
+history_question1.answers.find_or_create_by!(body: '1939', correct: true)
+history_question1.answers.find_or_create_by!(body: '1941', correct: false)
+history_question1.answers.find_or_create_by!(body: '1914', correct: false)
+history_question1.answers.find_or_create_by!(body: '1936', correct: false)
 
-geography_question1.answers.create!([
-                                      { body: 'Амазонка', correct: true },
-                                      { body: 'Нил', correct: false },
-                                      { body: 'Янцзы', correct: false },
-                                      { body: 'Миссисипи', correct: false }
-                                    ])
+history_question2.answers.find_or_create_by!(body: 'Джордж Вашингтон', correct: true)
+history_question2.answers.find_or_create_by!(body: 'Авраам Линкольн', correct: false)
+history_question2.answers.find_or_create_by!(body: 'Томас Джефферсон', correct: false)
+history_question2.answers.find_or_create_by!(body: 'Джон Адамс', correct: false)
 
-geography_question2.answers.create!([
-                                      { body: 'Непал', correct: true },
-                                      { body: 'Индия', correct: false },
-                                      { body: 'Китай', correct: false },
-                                      { body: 'Пакистан', correct: false }
-                                    ])
+geography_question1.answers.find_or_create_by!(body: 'Амазонка', correct: true)
+geography_question1.answers.find_or_create_by!(body: 'Нил', correct: false)
+geography_question1.answers.find_or_create_by!(body: 'Янцзы', correct: false)
+geography_question1.answers.find_or_create_by!(body: 'Миссисипи', correct: false)
+
+geography_question2.answers.find_or_create_by!(body: 'Непал', correct: true)
+geography_question2.answers.find_or_create_by!(body: 'Индия', correct: false)
+geography_question2.answers.find_or_create_by!(body: 'Китай', correct: false)
+geography_question2.answers.find_or_create_by!(body: 'Пакистан', correct: false)
 
 # Добавляем прохождения тестов пользователями
-max.test_passings.create!([
-                            { status: 'пройден', test: test_history },
-                            { status: 'в процессе', test: test_geography }
-                          ])
+max.test_passings.find_or_create_by!(status: 'пройден', test: test_history_dates)
+max.test_passings.find_or_create_by!(status: 'в процессе', test: test_geography_rivers)
 
-kate.test_passings.create!([
-                             { status: 'в процессе', test: test_geography },
-                             { status: 'в процессе', test: test_history }
-                           ])
+kate.test_passings.find_or_create_by!(status: 'в процессе', test: test_geography_rivers)
+kate.test_passings.find_or_create_by!(status: 'в процессе', test: test_history_dates)
 
-viky.test_passings.create!([
-                             { status: 'в процессе', test: test_history },
-                             { status: 'пройден', test: test_geography }
-                           ])
+viky.test_passings.find_or_create_by!(status: 'в процессе', test: test_history_presidents)
+viky.test_passings.find_or_create_by!(status: 'пройден', test: test_geography_mountains)
