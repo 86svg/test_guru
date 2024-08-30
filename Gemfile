@@ -30,6 +30,10 @@ gem 'pry'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'devise-i18n'
 
+# UI
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.3'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

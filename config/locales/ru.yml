@@ -17,6 +17,13 @@ ru:
     select:
       prompt: "Выберете нужное"
 
+  devise:
+    sessions:
+      header: "Войти"
+      enter_email: "Введите ваш email"
+      remember_me: "Запомнить меня"
+      sign_in: "Войти"
+
   shared:
     errors:
       header:
@@ -28,6 +35,12 @@ ru:
       author: "Сергей Гавриш"
       application_purpose: "Приложение для прохождения и создания тестов"
       project_school: "Учебный проект в онлайн-школе Thinknetica"
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+      log_in: "Войти"
+      sign_up: "Регистрация"
+      admin_panel: "Панель Администратора"
 
   tests:
     index:

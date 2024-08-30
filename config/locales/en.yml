@@ -17,6 +17,13 @@ en:
     select:
       prompt: "Please select"
 
+  devise:
+    sessions:
+      header: "Войти"
+      enter_email: "Enter email"
+      remember_me: "Запомнить меня"
+      sign_in: "Войти"
+
   shared:
     errors:
       header:
@@ -26,6 +33,12 @@ en:
       author: "Sergey Gavrish"
       application_purpose: "Application for taking and creating tests"
       project_school: "Educational project at the Thinknetica online school"
+    nav:
+      welcome: "Welcome"
+      logout: "Logout"
+      log_in: "Log in"
+      sign_up: "Sign Up"
+      admin_panel: "Admin Panel"
 
   tests:
     index:
