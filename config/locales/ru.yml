@@ -57,6 +57,15 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
 
+  gists:
+    create:
+      success: "%{link} успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
+
+  services:
+    gist_question_service:
+      description: "Вопрос теста %{title} из TestGuru"
+
   admin:
     nav:
       admin_panel: "Панель Администраторов TestGuru"

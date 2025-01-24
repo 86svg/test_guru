@@ -11,7 +11,7 @@ en:
         update: "Update Test"
     label:
       test:
-        title: "Title"
+        title: "%{test_title}"
         level: "Level"
         category_id: "Category"
     select:
@@ -19,7 +19,7 @@ en:
 
   devise:
     sessions:
-      header: "Войти"
+      header: "Enter"
       enter_email: "Enter email"
       remember_me: "Запомнить меня"
       sign_in: "Войти"
@@ -55,6 +55,15 @@ en:
   test_passings:
     result:
       header: "The %{title} Test was Completed!"
+
+  gists:
+    create:
+      success: "%{link} successfully saved"
+      failure: "An error occurred while saving gist"
+
+  services:
+    gist_question_service:
+      description: "A question about %{title} from TestGuru"
 
   admin:
     nav:
