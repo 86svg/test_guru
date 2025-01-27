@@ -56,6 +56,10 @@ ru:
   test_passings:
     result:
       header: "Тест %{title} успешно завершен!"
+    show:
+      passing_the_test: "Прохождение теста"
+      next: "Далее"
+      gist_question: "Создать Gist для вопроса"
 
   gists:
     create:

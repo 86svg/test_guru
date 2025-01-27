@@ -17,4 +17,4 @@
   <p> <%= form.submit 'Далее' %> </p>
 <% end %>
 
-<p><%= button_to t('.gist_question'), gists_path(@test_passing), method: :post %></p>
+<p><%= button_to t('.gist_question'), action: "create", controller: "gists", id: @test_passing.id %></p>

@@ -11,7 +11,7 @@ en:
         update: "Update Test"
     label:
       test:
-        title: "%{test_title}"
+        title: "Title"
         level: "Level"
         category_id: "Category"
     select:
@@ -21,8 +21,8 @@ en:
     sessions:
       header: "Enter"
       enter_email: "Enter email"
-      remember_me: "Запомнить меня"
-      sign_in: "Войти"
+      remember_me: "Remember me"
+      sign_in: "Log in"
 
   shared:
     errors:
@@ -55,6 +55,10 @@ en:
   test_passings:
     result:
       header: "The %{title} Test was Completed!"
+    show:
+      passing_the_test: "Passing the test"
+      next: "Next"
+      gist_question: "Gist question"
 
   gists:
     create:
