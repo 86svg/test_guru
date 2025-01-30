@@ -1,4 +1,5 @@
 require 'octokit'
+require 'ostruct'
 
 class GistQuestionService
 
@@ -10,10 +11,17 @@ class GistQuestionService
 
   def call(public: true)
     response = @client.create_gist(gist_params(public))
-    OpenStruct.new(
-      'html_url' => response&.html_url,
-      'success?' => response.html_url.present?
-    )
+
+    if response.status == 201
+      OpenStruct.new(
+        'html_url' => response.html_url,
+        'success?' => true
+      )
+    else
+      handle_error(response)
+    end
+  rescue Octokit::Error => e
+    handle_error(e)
   end
 
   private
@@ -33,4 +41,19 @@ class GistQuestionService
   def gist_content
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
+
+  def handle_error(response_or_error)
+    error_message = if response_or_error.respond_to?(:message)
+                      response_or_error.message
+                    else
+                      "Ошибка при создании Gist: #{response_or_error.body}"
+                    end
+
+    OpenStruct.new(
+      'html_url' => nil,
+      'success?' => false,
+      'error' => error_message
+    )
+  end
 end
+
