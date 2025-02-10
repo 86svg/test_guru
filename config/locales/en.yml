@@ -1,10 +1,8 @@
+
 en:
   hello: "Hello world"
 
   helpers:
-    question_header:
-      edit: "Edit Question %{test_title}"
-      new: "Create New Question %{test_title}"
     submit:
       test:
         create: "Create Test"
@@ -17,13 +15,6 @@ en:
     select:
       prompt: "Please select"
 
-  devise:
-    sessions:
-      header: "Enter"
-      enter_email: "Enter email"
-      remember_me: "Remember me"
-      sign_in: "Log in"
-
   shared:
     errors:
       header:
@@ -33,12 +24,14 @@ en:
       author: "Sergey Gavrish"
       application_purpose: "Application for taking and creating tests"
       project_school: "Educational project at the Thinknetica online school"
+      feedback: "Feedback"
     nav:
       welcome: "Welcome"
       logout: "Logout"
       log_in: "Log in"
       sign_up: "Sign Up"
       admin_panel: "Admin Panel"
+      badges: 'Badges'
 
   tests:
     index:
@@ -50,7 +43,6 @@ en:
       actions: "Actions"
     test:
       start: 'Start'
-
 
   test_passings:
     result:
@@ -69,49 +61,30 @@ en:
     gist_question_service:
       description: "A question about %{title} from TestGuru"
 
+  badges:
+    index:
+      image: 'Image'
+      title: 'title'
+      description: 'Description'
+      received: 'Received'
+      badges: 'Badges'
+      new_badge: 'New Badge'
+    obtained:
+      badges: 'Badges'
+
   admin:
     nav:
       admin_panel: "TestGuru Admin Panel"
-    answers:
-      answer:
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirm_delete: "Are you sure?"
-      edit:
-        header: "Editing answer"
-        back: "Back"
-      new:
-        header: "New answer"
-        back: "Back"
-      show:
-        header: "Question"
-        answer: "Answer"
-        correct: "Correct"
-        back: "Back"
-    questions:
-      question:
-        title: "Answers"
-        show: "Show"
-        edit: "Edit"
-        delete: "Delete"
-        confirm_delete: "Are you sure?"
-      edit:
-        header: "Edit %{test_title} test"
-        back: "Back"
-      new:
-        back: "Back"
-      show:
-        title: "Answers"
-        level: "Level"
-        create_new_question: "Create new qustion"
-        edit_test: "Edit test"
-        to_tests: "to tests"
+      logout: "Log out"
+      gist_table: 'Gist'
+    gists:
+      index:
+        author: "Author"
+        question: "Question"
+    badges:
+      create:
+        success: "Badge was succesfully created."
     tests:
-      test:
-        open: "Open"
-        edit: "Edit"
-        delete: "Delete"
       create:
         success: "Test was succesfully created."
       index:
@@ -128,6 +101,13 @@ en:
       edit:
         header: "Edit %{test_title} test"
         back: "Back"
+      questions:
+        question:
+          title: "Answers"
+          show: "Show"
+          edit: "Edit"
+          delete: "Delete"
+          confirm_delete: "Are you sure?"
       show:
         title: "Title"
         level: "Level"
@@ -138,6 +118,23 @@ en:
         open: 'Open'
         edit: 'Edit'
         delete: "Delete"
+      form_inline:
+        submit: "Ok"
+        enter_test_title: "Enter test title"
+
+  feedbacks:
+    new:
+      header: "Header"
+    form:
+      subject: "Subject"
+      content: "Content"
+      send: "Send"
+    create:
+      create: "Message successfuly sended"
+
+  feedbacks_mailer:
+    feedback:
+      subject: "New message from %{from}"
 
   tests_mailer:
     completed_test:

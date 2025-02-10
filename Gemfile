@@ -33,7 +33,7 @@ gem 'devise-i18n'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.3'
-
+gem 'octicons_helper'
 gem 'octokit'
 
 
