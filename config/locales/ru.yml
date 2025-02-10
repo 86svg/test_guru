@@ -56,6 +56,19 @@ ru:
   test_passings:
     result:
       header: "Тест %{title} успешно завершен!"
+    show:
+      passing_the_test: "Прохождение теста"
+      next: "Далее"
+      gist_question: "Создать Gist для вопроса"
+
+  gists:
+    create:
+      success: "%{link} успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
+
+  services:
+    gist_question_service:
+      description: "Вопрос теста %{title} из TestGuru"
 
   admin:
     nav:
