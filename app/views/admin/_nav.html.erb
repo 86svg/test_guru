@@ -8,7 +8,7 @@
     <span class="nav-admin title">
       <%= link_to 'Gist table', admin_gists_path %>
     </span>
-    
+
     <div class="nav-admin user">
       <%= t('layouts.application.welcome') %> <b class="nav-admin user-email"><%= current_user.email %></b> Guru |
       <%= button_to t('layouts.application.logout'), destroy_user_session_path, method: :delete %>
