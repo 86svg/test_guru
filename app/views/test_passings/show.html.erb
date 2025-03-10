@@ -1,10 +1,16 @@
+<div class="my-3">
+  <%= render 'progress_bar', current: @test_passing.number_questions, total: @test_passing.number_questions %>
+</div>
+
 <h1> Прохождение теста: "<%= @test_passing.test.title %>"</h1>
 
-<p> Вопрос <%= @test_passing.current_question_number %> из <%= @test_passing.number_questions %></p>
+<p> Вопрос <%= @test_passing.number_questions  %> из <%= @test_passing.number_questions %></p>
 
-<b>
-  <%= @test_passing.current_question.body %>
-</b>
+<p>
+
+  <b> <%= @test_passing.current_question.body %> </b>
+
+<p>
 
 <%= form_with url: test_passing_path(@test_passing), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passing.current_question.answers, :id, :body, include_hidden: false do |b| %>

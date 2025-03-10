@@ -1,0 +1,11 @@
+<%= form_with model: [:admin, test],
+              url: update_inline_admin_test_path(test),
+              class: 'row d-none form-inline my-3',
+              data: { test_id: test.id } do |form| %>
+  <div class="col-8">
+    <%= form.text_field :title, class: 'form-control mr-2', placeholder: t('.enter_test_title') %>
+  </div>
+  <div class="col-4">
+    <%= form.submit t('.submit'), class: 'btn btn-success w-100' %>
+  </div>
+<% end %>

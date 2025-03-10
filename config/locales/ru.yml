@@ -137,6 +137,9 @@ ru:
         open: 'Открыть'
         edit: 'Изменить'
         delete: "Удалить"
+      form_inline:
+         submit: "ОК"
+         enter_test_title: "Введите название теста"
 
   tests_mailer:
     completed_test:
