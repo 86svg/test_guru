@@ -1,4 +1,8 @@
-<h1>Тест "<%= t('.header', title: @test_passing.test.title) %>" завершен!</h1>
+<div class="my-3">
+  <%= render 'progress_bar', current: @test_passing.number_questions, total: @test_passing.number_questions %>
+</div>
+
+<h1> <%= t('.header', title: @test_passing.test.title) %> </h1>
 
 <p>Правильных ответов: <%= @test_passing.correct_questions %></p>
 <p>Всего вопросов: <%= @test_passing.test.questions.count %></p>
