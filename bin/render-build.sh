@@ -4,16 +4,16 @@ yarn add @babel/plugin-transform-private-methods @babel/plugin-transform-private
 # Установка зависимостей с использованием frozen lockfile
 yarn install -frozen-lockfile
 # Очистка старых ассетов
-bundle exec rails assets: clobber
+bundle exec rails assets:clobber
 # Установка Ruby зависимостей
 bundle install
 # Компиляция ассетов Webpacker
-bundle exec rails webpacker: compile
+bundle exec rails webpacker:compile
 # Компиляция ассетов
 bundle exec rake assets:precompile
 # Очистка старых ассетов
-bundle exec rake assets: clean
+bundle exec rake assets:clean
 # Применение миграций базы данных
-bundle exec rails dbimigrate
+bundle exec rails db:imigrate
 # Очистка кэша Yarn
 yarn cache clean
