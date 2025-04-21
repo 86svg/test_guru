@@ -1,20 +1,19 @@
-
-#!/bin/bash
-O
-& SHANNA&D EDGE NESO∞NOU
-# AcTaHOBKa He06X0 MMbIX marMHoB Babel
-yarn install --frozen-lockfile
-# Ouncika CTaDbIX accetob
+#1/bin/bash
+# Установка необходимых плагинов Babel
+yarn add @babel/plugin-transform-private-methods @babel/plugin-transform-private-property-in-object
+# Установка зависимостей с использованием frozen lockfile
+yarn install -frozen-lockfile
+# Очистка старых ассетов
 bundle exec rails assets: clobber
-# YcTaHOBKa Ruby 3aBMChMOCTen
+# Установка Ruby зависимостей
 bundle install
-# KOMOunAuMA ACCeTOB Webpacker
+# Компиляция ассетов Webpacker
 bundle exec rails webpacker: compile
-# KoMnunAuMa acceTOB
+# Компиляция ассетов
 bundle exec rake assets:precompile
-# O4MCTKa crapbiX acceToB
+# Очистка старых ассетов
 bundle exec rake assets: clean
-# AlpuMeHeHVe Murpaumü 6a3bl naHHbiX
-bundle exec rails db: migrate
-# 04MCTKa Kawa Yarn
+# Применение миграций базы данных
+bundle exec rails dbimigrate
+# Очистка кэша Yarn
 yarn cache clean
