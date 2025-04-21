@@ -14,6 +14,6 @@ bundle exec rake assets:precompile
 # Очистка старых ассетов
 bundle exec rake assets:clean
 # Применение миграций базы данных
-bundle exec rails db:imigrate
+bundle exec rails db:migrate
 # Очистка кэша Yarn
 yarn cache clean
