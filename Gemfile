@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.0'
 gem 'pry'
+gem 'concurrent-ruby', '1.3.4'
 
 #Localization
 gem 'rails-i18n', '~> 6.0.0'
@@ -35,7 +36,6 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 5.3'
 gem 'octicons_helper'
 gem 'octokit'
-
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -2,7 +2,7 @@
 # Установка необходимых плагинов Babel
 yarn add @babel/plugin-transform-private-methods @babel/plugin-transform-private-property-in-object
 # Установка зависимостей с использованием frozen lockfile
-yarn install -frozen-lockfile
+yarn install
 # Очистка старых ассетов
 bundle exec rails assets:clobber
 # Установка Ruby зависимостей
