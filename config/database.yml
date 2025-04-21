@@ -23,5 +23,7 @@ test:
 
 production:
   <<: *default
-  url: ENV['DATABASE_URL']
-  database: test_guru_production
+  database: ENV['DB_NAME']
+  host: ENV['DB_HOST']
+  user: ENV['DB_USERNAME']
+  password: ENV['DB_PASSWORD']
